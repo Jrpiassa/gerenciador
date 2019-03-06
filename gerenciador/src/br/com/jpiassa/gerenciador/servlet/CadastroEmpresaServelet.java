@@ -35,10 +35,14 @@ public class CadastroEmpresaServelet extends HttpServlet {
 		empresa.setNome(nome);
 		banco.adiciona(empresa);
 		
+		
+		response.sendRedirect("listaEmpresa");
+		
 		//chama o jsp
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/sucesso.jsp");
-		request.setAttribute("nomeEmpresa", empresa.getNome());
-		requestDispatcher.forward(request, response);
+		//RequestDispatcher requestDispatcher = request.getRequestDispatcher("/sucesso.jsp");
+//		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/listaEmpresa");
+//		request.setAttribute("nomeEmpresa", empresa.getNome());
+//		requestDispatcher.forward(request, response);
 		/*
 		 * out.println("<html>" + "<body>" + "<h1>Empresa "+ nome
 		 * +" cadastrada com sucesso !</h1>" + "</body>" + "</html>");
